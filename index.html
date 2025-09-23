@@ -217,18 +217,7 @@ input[type="radio"]:checked {
   </style>
 </head>
 <body oncontextmenu="return false" onkeydown="return disableKeys(event)">
-<script>
-  function disableKeys(e) {
-    const keys = [123, 73, 74, 85]; // F12, Ctrl+Shift+I/J/U
-    if (
-      keys.includes(e.keyCode) ||
-      (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
-      (e.ctrlKey && e.key === "U")
-    ) {
-      return false;
-    }
-  }
-</script>
+ 
   <h3>ITOZE GUSUBIZA IBIBAZO UTSINDIRE PROVISOIRE MU GIHE GITO!</h3>
   <button class="custom-button" id="startQuizBtn" onclick="showPasswordModal()">
     TANGIRA IKIZAMI CYA 1
@@ -278,6 +267,17 @@ const correctAnswers = [
   2, 0, 0, 2, 1, 0, 2, 1, 2, 2
 ];
 const timerDiv = document.getElementById("timer");
+
+ function disableKeys(e) {
+    const keys = [123, 73, 74, 85]; // F12, Ctrl+Shift+I/J/U
+    if (
+      keys.includes(e.keyCode) ||
+      (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
+      (e.ctrlKey && e.key === "U")
+    ) {
+      return false;
+    }
+  }
 
 function showPasswordModal() {
   if (quizStarted) {
