@@ -677,6 +677,33 @@ function confirmExit() {
 function goToHome() {
   window.location.href = "https://icyapa.com/#quizzes";
 }
+
+// 🔒 Disable right-click
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+// 🔒 Disable common inspect / dev tools shortcuts
+document.onkeydown = function(e) {
+  // F12
+  if (e.key === "F12") {
+    e.preventDefault();
+  }
+  // Ctrl+Shift+I (Inspect), Ctrl+Shift+C (Element picker), Ctrl+Shift+J (Console)
+  if (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "C" || e.key === "J")) {
+    e.preventDefault();
+  }
+  // Ctrl+U (View source)
+  if (e.ctrlKey && e.key === "u") {
+    e.preventDefault();
+  }
+  // Ctrl+S (Save page)
+  if (e.ctrlKey && e.key === "s") {
+    e.preventDefault();
+  }
+  // Ctrl+Shift+K (Firefox console)
+  if (e.ctrlKey && e.shiftKey && e.key === "K") {
+    e.preventDefault();
+  }
+};
 </script>
 </body>
 </html>
